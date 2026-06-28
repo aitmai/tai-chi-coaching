@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a0a;
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+  overflow: hidden;
+}
+
+.app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(-1);
+}
+
+.start-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  z-index: 10;
+}
+
+.start-screen h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.start-screen p {
+  font-size: 1rem;
+  color: #888888;
+  margin-bottom: 2.5rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.start-btn {
+  background: transparent;
+  border: 1px solid #4ade80;
+  color: #4ade80;
+  padding: 0.85rem 2.5rem;
+  font-size: 1rem;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+  background: #4ade80;
+  color: #0a0a0a;
+}
+
+.feedback-panel {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid #4ade80;
+  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  max-width: 480px;
+  width: 90%;
+  z-index: 10;
+  text-align: center;
+}
+
+.feedback-panel .label {
+  font-size: 0.7rem;
+  color: #4ade80;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.feedback-panel .tip {
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.5;
+  font-family: 'Arial', sans-serif;
+}
+
+.status-bar {
+  position: absolute;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0,0,0,0.6);
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  z-index: 10;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: pulse 1.5s infinite;
+}
+
+.status-text {
+  font-size: 0.75rem;
+  color: #aaaaaa;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 0.08em;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
